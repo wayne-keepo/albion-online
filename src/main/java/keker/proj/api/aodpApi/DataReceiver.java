@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
+import org.springframework.web.util.UriUtils;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,7 +19,7 @@ public class DataReceiver {
     private static DataReceiver instance;
 
     @Autowired
-    private RestTemplate restTemplate;
+    private RestTemplate restTemplate = new RestTemplate();
 
     private DataReceiver(){}
 
@@ -29,21 +31,21 @@ public class DataReceiver {
 
     }
 
-    public List<Price> uploadPrices(List<String> itemList, Map<String, Object> uriVariables){
-        String url = generateUrl(itemList);
-        System.out.println(url);
-        ResponseEntity<Price[]> response = restTemplate.getForEntity(url, Price[].class, uriVariables);
-        List<Price> prices = Arrays.asList(response.getBody());
+    public List<Price> uploadPrices(List<String> itemList, List<String> locations){
+        String url = generateUrl(itemList, locations);
+        Price[] response = restTemplate.getForObject(url, Price[].class);
+        List<Price> prices = Arrays.asList(response);
         System.out.println(prices);
         return prices;
     }
 
-    private String generateUrl(List<String> itemList) {
+    public String generateUrl(List<String> itemList, List<String> locations) {
         StringBuilder builder = new StringBuilder(PRICES_AOD_URL);
         for (String item: itemList)
-            builder.append(item).append(",");
-
-        return builder.toString().substring(0,builder.lastIndexOf(","));
+            builder.append(item);
+        builder.append("?locations=");
+        locations.forEach(builder::append);
+        return builder.toString();
     }
 
 }

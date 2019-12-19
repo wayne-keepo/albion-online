@@ -29,5 +29,7 @@ public class Price {
     @JsonIgnoreProperties
     private LocalDateTime buy_price_max_date;
 
-    public void priceAdjustment(){this.sell_price_min+=5;}
+    public void priceAdjustment() {
+        this.sell_price_min += 5;
+    }
 }

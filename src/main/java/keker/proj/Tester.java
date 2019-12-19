@@ -1,13 +1,13 @@
 package keker.proj;
 
+import keker.proj.api.aodpApi.DataReceiver;
+import keker.proj.api.data.Price;
 import keker.proj.services.ItemBuilder;
 import org.jutils.jprocesses.JProcesses;
 import org.jutils.jprocesses.model.ProcessInfo;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Tester {
     public static final String AO_PROC_NAME = "Albion-Online.exe";
@@ -27,12 +27,6 @@ public class Tester {
 //        System.out.println(response);
 //        Thread.sleep(60000);
 
-        ItemBuilder b = new ItemBuilder();
-
-//        String s = b.buildNormalItems("CLOTH");
-        String s = b.buildImprovedItems("CLOTH");
-
-        System.out.println(s);
     }
 
     private void getAOProcess() {

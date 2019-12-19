@@ -1,5 +1,6 @@
 package keker.proj.services;
 
+import keker.proj.constants.AOResourcesTitle;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -24,15 +25,23 @@ public class ItemBuilder {
 
     public List<String> buildImprovedItems(String itemName) {
         StringBuilder builder = new StringBuilder();
-        List<String> improvedItems = new ArrayList<>(22);
+        List<String> improvedItems = new ArrayList<>(6);
         for (int i = 4; i <= 8; i++) {
             builder.append(TIER).append(i).append("_").append(itemName).append(",");
             for (int k = 1; k <= 3; k++) {
                 builder.append(TIER).append(i).append("_").append(itemName).append(LEVEL).append(k).append(META_LVL).append(k).append(',');
-                improvedItems.add(builder.toString());
             }
+            improvedItems.add(builder.toString());
             builder.setLength(0);
         }
         return improvedItems;
+    }
+
+    public List<String> buildAllImprovedItems() {
+        List<String> items = new ArrayList<>(AOResourcesTitle.values().length * 5 + 1);
+        for (AOResourcesTitle title: AOResourcesTitle.values()){
+            items.addAll(buildImprovedItems(title.name()));
+        }
+        return items;
     }
 }

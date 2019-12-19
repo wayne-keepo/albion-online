@@ -5,10 +5,12 @@ import keker.proj.api.data.Price;
 import keker.proj.constants.AOResourcesTitle;
 import keker.proj.services.ItemBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/prices")
@@ -17,61 +19,49 @@ public class PriceController {
     @Autowired
     private ItemBuilder itemNameBuilder;
 
-    @RequestMapping("/resources")
-    public List<Price> getPrices() {
-
-        return null;
+    @RequestMapping(value = "/resources")
+    public @ResponseBody
+    List<Price> getPrices(@RequestParam(required = false, name = "locations", defaultValue = "Caerleon") List<String> locations) {
+        return DataReceiver.getInstance().uploadPrices(
+                itemNameBuilder.buildAllImprovedItems(),
+                locations);
     }
 
     //T?_PLANKS
-    @RequestMapping(value = "/planks", method = RequestMethod.POST)
+    @RequestMapping(value = "/planks")
     public @ResponseBody
-    List<Price> getPlanks(@RequestBody(required = false) Map<String, Object> locations) {
-        List<String> planks = itemNameBuilder.buildNormalItems(AOResourcesTitle.PLANKS.name());
-        if (locations.isEmpty())
-            locations.put("locations", "Caerleon");
-        List<Price> prices = DataReceiver.getInstance().uploadPrices(planks, locations);
-        recalcMinPrice(prices);
-        return prices;
+    List<Price> getPlanks(@RequestParam(required = false, name = "locations", defaultValue = "Caerleon") List<String> locations) {
+        return DataReceiver.getInstance().uploadPrices(
+                itemNameBuilder.buildImprovedItems(AOResourcesTitle.PLANKS.name()),
+                locations);
     }
 
     //T?_METALBAR
     @RequestMapping("/metalbars")
     public @ResponseBody
-    List<Price> getMetalbars(@RequestBody(required = false) Map<String, Object> locations) {
-        List<String> metalbars = itemNameBuilder.buildNormalItems(AOResourcesTitle.METALBAR.name());
-        if (locations.isEmpty())
-            locations.put("locations", "Caerleon");
-        List<Price> prices = DataReceiver.getInstance().uploadPrices(metalbars, locations);
-        recalcMinPrice(prices);
-        return prices;
+    List<Price> getMetalbars(@RequestParam(required = false, name = "locations", defaultValue = "Caerleon") List<String> locations) {
+        return DataReceiver.getInstance().uploadPrices(
+                itemNameBuilder.buildImprovedItems(AOResourcesTitle.METALBAR.name()),
+                locations);
     }
 
     //T?_LEATHER
     @RequestMapping("/leathers")
     public @ResponseBody
-    List<Price> getLeathers(@RequestBody(required = false) Map<String, Object> locations) {
-        List<String> leathers = itemNameBuilder.buildNormalItems(AOResourcesTitle.LEATHER.name());
-        if (locations.isEmpty())
-            locations.put("locations", "Caerleon");
-        List<Price> prices = DataReceiver.getInstance().uploadPrices(leathers, locations);
-        recalcMinPrice(prices);
-        return prices;
+    List<Price> getLeathers(@RequestParam(required = false, name = "locations", defaultValue = "Caerleon") List<String> locations) {
+        return DataReceiver.getInstance().uploadPrices(
+                itemNameBuilder.buildImprovedItems(AOResourcesTitle.LEATHER.name()),
+                locations);
     }
 
     //T?_CLOTH
     @RequestMapping("/cloths")
-    public List<Price> getCloths(@RequestBody(required = false) Map<String, Object> locations) {
-        List<String> cloths = itemNameBuilder.buildNormalItems(AOResourcesTitle.CLOTH.name());
-        if (locations.isEmpty())
-            locations.put("locations", "Caerleon");
-        List<Price> prices = DataReceiver.getInstance().uploadPrices(cloths, locations);
-        recalcMinPrice(prices);
-        return prices;
+    public @ResponseBody
+    List<Price> getCloths(@RequestParam(required = false, name = "locations", defaultValue = "Caerleon") List<String> locations) {
+        return DataReceiver.getInstance().uploadPrices(
+                itemNameBuilder.buildImprovedItems(AOResourcesTitle.CLOTH.name()),
+                locations);
     }
 
-    private void recalcMinPrice(List<Price> prices) {
-        prices.forEach(Price::priceAdjustment);
-    }
 
 }
