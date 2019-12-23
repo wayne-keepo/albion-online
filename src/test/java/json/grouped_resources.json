@@ -1,0 +1,162 @@
+[
+  {
+    "tier": "4",
+    "planks": 241,
+    "metalbar": 257,
+    "leather": 393,
+    "cloth": 299,
+    "date": "2019-12-23T20:00"
+  },
+  {
+    "tier": "4.1",
+    "planks": 419,
+    "metalbar": 630,
+    "leather": 598,
+    "cloth": 547,
+    "date": "2019-12-23T20:00"
+  },
+  {
+    "tier": "4.2",
+    "planks": 1550,
+    "metalbar": 2187,
+    "leather": 2196,
+    "cloth": 2418,
+    "date": "2019-12-23T20:00"
+  },
+  {
+    "tier": "4.3",
+    "planks": 5599,
+    "metalbar": 8894,
+    "leather": 7499,
+    "cloth": 9607,
+    "date": "2019-12-23T20:00"
+  },
+  {
+    "tier": "5",
+    "planks": 1233,
+    "metalbar": 1279,
+    "leather": 1835,
+    "cloth": 1399,
+    "date": "2019-12-23T20:00"
+  },
+  {
+    "tier": "5.1",
+    "planks": 2199,
+    "metalbar": 2443,
+    "leather": 2716,
+    "cloth": 2459,
+    "date": "2019-12-23T20:00"
+  },
+  {
+    "tier": "5.2",
+    "planks": 5127,
+    "metalbar": 7304,
+    "leather": 6989,
+    "cloth": 6845,
+    "date": "2019-12-23T20:00"
+  },
+  {
+    "tier": "5.3",
+    "planks": 17940,
+    "metalbar": 27800,
+    "leather": 27598,
+    "cloth": 26997,
+    "date": "2019-12-23T20:00"
+  },
+  {
+    "tier": "6",
+    "planks": 2348,
+    "metalbar": 2287,
+    "leather": 3571,
+    "cloth": 2820,
+    "date": "2019-12-23T20:00"
+  },
+  {
+    "tier": "6.1",
+    "planks": 4287,
+    "metalbar": 5077,
+    "leather": 6681,
+    "cloth": 5978,
+    "date": "2019-12-23T20:01"
+  },
+  {
+    "tier": "6.2",
+    "planks": 9332,
+    "metalbar": 10985,
+    "leather": 12699,
+    "cloth": 13023,
+    "date": "2019-12-23T20:01"
+  },
+  {
+    "tier": "6.3",
+    "planks": 26718,
+    "metalbar": 36486,
+    "leather": 35988,
+    "cloth": 33730,
+    "date": "2019-12-23T20:01"
+  },
+  {
+    "tier": "7",
+    "planks": 5563,
+    "metalbar": 5297,
+    "leather": 8175,
+    "cloth": 8369,
+    "date": "2019-12-23T20:01"
+  },
+  {
+    "tier": "7.1",
+    "planks": 12096,
+    "metalbar": 14300,
+    "leather": 16096,
+    "cloth": 17054,
+    "date": "2019-12-23T20:01"
+  },
+  {
+    "tier": "7.2",
+    "planks": 31429,
+    "metalbar": 38966,
+    "leather": 35039,
+    "cloth": 36988,
+    "date": "2019-12-23T20:01"
+  },
+  {
+    "tier": "7.3",
+    "planks": 139980,
+    "metalbar": 131998,
+    "leather": 128999,
+    "cloth": 112952,
+    "date": "2019-12-23T20:01"
+  },
+  {
+    "tier": "8",
+    "planks": 17880,
+    "metalbar": 18200,
+    "leather": 27200,
+    "cloth": 23921,
+    "date": "2019-12-23T20:01"
+  },
+  {
+    "tier": "8.1",
+    "planks": 35975,
+    "metalbar": 38689,
+    "leather": 39982,
+    "cloth": 36474,
+    "date": "2019-12-23T20:01"
+  },
+  {
+    "tier": "8.2",
+    "planks": 88980,
+    "metalbar": 109997,
+    "leather": 99974,
+    "cloth": 88593,
+    "date": "2019-12-23T20:01"
+  },
+  {
+    "tier": "8.3",
+    "planks": 320000,
+    "metalbar": 274997,
+    "leather": 292915,
+    "cloth": 238972,
+    "date": "2019-12-23T20:01"
+  }
+]

@@ -2,12 +2,15 @@
     <div class="main_resources">
         <div class="gather_resources">
             <GatherResources/>
+            <button>update</button>
         </div >
         <div class="food_resources">
             <FoodResources/>
+            <button>update</button>
         </div>
         <div class="alchemy_resources">
             <AlchemyResources/>
+            <button>update</button>
         </div>
     </div>
 </template>
@@ -21,9 +24,7 @@
     export default {
         name: "TableSheet",
         data:() => ({
-            mLoading: true,
-            fLoading: true,
-            aLoading: true
+
         }),
         components:{
             GatherResources,

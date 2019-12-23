@@ -24,6 +24,7 @@ public class ItemBuilder {
     }
 
     public List<String> buildImprovedItems(String itemName) {
+
         StringBuilder builder = new StringBuilder();
         List<String> improvedItems = new ArrayList<>(6);
         for (int i = 4; i <= 8; i++) {

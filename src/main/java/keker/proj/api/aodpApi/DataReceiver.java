@@ -3,15 +3,11 @@ package keker.proj.api.aodpApi;
 
 import keker.proj.api.data.Price;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriComponentsBuilder;
-import org.springframework.web.util.UriUtils;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 @Component
 public class DataReceiver {

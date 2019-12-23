@@ -2,12 +2,15 @@ package keker.proj;
 
 import keker.proj.api.aodpApi.DataReceiver;
 import keker.proj.api.data.Price;
+import keker.proj.constants.Tier;
 import keker.proj.services.ItemBuilder;
 import org.jutils.jprocesses.JProcesses;
 import org.jutils.jprocesses.model.ProcessInfo;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Tester {
     public static final String AO_PROC_NAME = "Albion-Online.exe";
@@ -26,7 +29,11 @@ public class Tester {
 //        String response = new String(msg.getData(), StandardCharsets.UTF_8);
 //        System.out.println(response);
 //        Thread.sleep(60000);
+            String s1 = "T4_CLOTH_LEVEL1@1";
+            String s2 = "T4_CLOTH";
 
+        System.out.println(Arrays.toString(s1.split("_")));
+        System.out.println(Arrays.toString(s2.split("_")));
     }
 
     private void getAOProcess() {
