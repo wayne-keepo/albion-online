@@ -1,8 +1,8 @@
-package keker.proj.api.data;
+package keker.proj.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import keker.proj.constants.AOResourcesTitle;
-import keker.proj.constants.Tier;
+import keker.proj.api.constant.GatherResources;
+import keker.proj.api.constant.Tier;
 import lombok.*;
 
 import java.util.regex.Matcher;
@@ -16,10 +16,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class Price {
+public class GatherPrice {
     private String item_id;
     private Tier tier = null;
-    private AOResourcesTitle type = null;
+    private GatherResources type = null;
     private String city;
     private Integer quality;
     private Integer sell_price_min;
@@ -42,7 +42,7 @@ public class Price {
     }
 
     public void appointType() {
-        this.type = AOResourcesTitle.valueOf(item_id.split("_")[1]);
+        this.type = GatherResources.valueOf(item_id.split("_")[1]);
     }
 
     public void appointTier() {

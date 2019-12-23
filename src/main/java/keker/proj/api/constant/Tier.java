@@ -1,7 +1,6 @@
-package keker.proj.constants;
+package keker.proj.api.constant;
 
 import java.util.Arrays;
-import java.util.Optional;
 
 public enum Tier {
     FR("4"),

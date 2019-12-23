@@ -1,7 +1,7 @@
-package keker.proj.api.aodpApi;
+package keker.proj.api.reciever;
 
 
-import keker.proj.api.data.Price;
+import keker.proj.api.model.GatherPrice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -27,10 +27,10 @@ public class DataReceiver {
 
     }
 
-    public List<Price> uploadPrices(List<String> itemList, List<String> locations){
+    public List<GatherPrice> uploadPrices(List<String> itemList, List<String> locations){
         String url = generateUrl(itemList, locations);
-        Price[] response = restTemplate.getForObject(url, Price[].class);
-        List<Price> prices = Arrays.asList(response);
+        GatherPrice[] response = restTemplate.getForObject(url, GatherPrice[].class);
+        List<GatherPrice> prices = Arrays.asList(response);
         System.out.println(prices);
         return prices;
     }

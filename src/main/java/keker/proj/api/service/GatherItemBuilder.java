@@ -1,13 +1,13 @@
-package keker.proj.services;
+package keker.proj.api.service;
 
-import keker.proj.constants.AOResourcesTitle;
+import keker.proj.api.constant.GatherResources;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ItemBuilder {
+public class GatherItemBuilder {
     private static final String TIER = "T";
     private static final String LEVEL = "_LEVEL";
     private static final String META_LVL = "@";
@@ -39,8 +39,8 @@ public class ItemBuilder {
     }
 
     public List<String> buildAllImprovedItems() {
-        List<String> items = new ArrayList<>(AOResourcesTitle.values().length * 5 + 1);
-        for (AOResourcesTitle title: AOResourcesTitle.values()){
+        List<String> items = new ArrayList<>(GatherResources.values().length * 5 + 1);
+        for (GatherResources title: GatherResources.values()){
             items.addAll(buildImprovedItems(title.name()));
         }
         return items;

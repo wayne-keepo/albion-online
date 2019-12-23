@@ -1,4 +1,4 @@
-package keker.proj.api.data;
+package keker.proj.api.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class PriceGroup {
+public class GatherPriceGroup {
     private String tier;
     private Integer planks;
     private Integer metalbar;
